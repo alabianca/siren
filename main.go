@@ -24,6 +24,7 @@ func main() {
 	flag.Parse()
 
 	if *listenFlag {
+		fmt.Printf("Listening on %s @ %s\n", *hostFlag, *portFlag)
 		listen()
 	} else {
 		watch()
