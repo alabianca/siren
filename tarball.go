@@ -26,6 +26,10 @@ func CreateTarballFrom(src string, dest io.WriteCloser) error {
 			return nil
 		}
 
+		if !info.Mode().IsRegular() {
+			return nil
+		}
+
 		header := &tar.Header{
 			Name:    p,
 			Size:    info.Size(),
